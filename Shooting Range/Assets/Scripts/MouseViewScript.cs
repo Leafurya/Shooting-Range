@@ -10,7 +10,7 @@ public class MouseViewScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
         trans = gameObject.transform;
         parentTrans = GameObject.Find("Body").transform;
