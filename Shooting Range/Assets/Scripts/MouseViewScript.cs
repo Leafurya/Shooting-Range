@@ -6,14 +6,17 @@ public class MouseViewScript : MonoBehaviour
 {
     private float sensi = 1.5f;
     private Transform trans;
-    private Transform parentTrans;
+    private Transform bodyTrans;
+    private Transform headTrans;
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
         trans = gameObject.transform;
-        parentTrans = GameObject.Find("Body").transform;
+        headTrans = trans.parent;
+        bodyTrans = GameObject.Find("Body").transform;
+        //gunTrans = trans.Find("Gun").transform;
     }
 
     // Update is called once per frame
@@ -22,11 +25,20 @@ public class MouseViewScript : MonoBehaviour
         float mouseX = (float)Input.GetAxis("Mouse X");
         float mouseY = (float)Input.GetAxis("Mouse Y");
 
-        trans.Rotate(-sensi * mouseY, 0f, 0f);
-        trans.eulerAngles = new Vector3(trans.eulerAngles.x, trans.eulerAngles.y, 0f);
+        /*trans.Rotate(-sensi * mouseY, 0f, 0f);
+        trans.eulerAngles = new Vector3(trans.eulerAngles.x, trans.eulerAngles.y, 0f);*/
 
-        parentTrans.Rotate(0f, sensi * mouseX, 0f);
-        parentTrans.eulerAngles = new Vector3(0f, parentTrans.eulerAngles.y, 0f);
+        //gunTrans.Rotate(-sensi * mouseY, 0f, 0f);
+        //gunTrans.eulerAngles = trans.eulerAngles;
+
+        /*parentTrans.Rotate(0f, sensi * mouseX, 0f);
+        parentTrans.eulerAngles = new Vector3(0f, parentTrans.eulerAngles.y, 0f);*/
+
+        headTrans.Rotate(-sensi * mouseY, sensi * mouseX, 0f);
+        headTrans.eulerAngles = new Vector3(headTrans.eulerAngles.x, headTrans.eulerAngles.y, 0f);
+
+        bodyTrans.Rotate(0f, sensi * mouseX, 0f);
+        bodyTrans.eulerAngles = new Vector3(0f, bodyTrans.eulerAngles.y, 0f);
 
         //trans.position = new Vector3(parentTrans.position.x, parentTrans.position.y+1.3f, parentTrans.position.z);
     }

@@ -6,13 +6,15 @@ public class GunScript : MonoBehaviour
 {
     public GameObject bulletPrefab;
     private GameObject bullet;
-    private float bulletSpeed = 50000f;
     private Transform trans;
+    private Transform berralTrans;
 
     // Start is called before the first frame update
     void Start()
     {
-        trans = gameObject.transform;
+        trans = GameObject.Find("Head").transform.Find("Camera");
+        Debug.Log(gameObject.transform.parent.name);
+        berralTrans = gameObject.transform.Find("Berral");
     }
 
     // Update is called once per frame
@@ -20,7 +22,7 @@ public class GunScript : MonoBehaviour
     {
         //trans.Rotate(-sensi * mouseY, 0f, 0f);
         //trans.eulerAngles = new Vector3(trans.parent.eulerAngles.x, trans.parent.eulerAngles.y, 0f);
-        //Debug.Log(trans.forward);
+        Debug.DrawRay(berralTrans.position, trans.forward * 100f,Color.red);
         if (Input.GetMouseButtonDown(0))
         {
             PullTrigger();
@@ -28,14 +30,14 @@ public class GunScript : MonoBehaviour
     }
     private void PullTrigger()
     {
-        Rigidbody ridi;
         Transform trans;
         bullet = Instantiate(bulletPrefab);
         trans = bullet.transform;
-        ridi = bullet.GetComponent<Rigidbody>();
         trans.parent = null;
-        trans.position = this.trans.position;
+        trans.position = berralTrans.position;
+        //Debug.Log(this.trans.parent.transform.Find("Camera").tag);
+        trans.forward = this.trans.forward;
         //ridi.velocity = new Vector3(this.trans.forward.x, this.trans.forward.y, this.trans.forward.z) * bulletSpeed;
-        ridi.AddForce(this.trans.forward * bulletSpeed);//(new Vector3(this.trans.forward.x * bulletSpeed, this.trans.forward.y * bulletSpeed, this.trans.forward.z * bulletSpeed) );
+        //(new Vector3(this.trans.forward.x * bulletSpeed, this.trans.forward.y * bulletSpeed, this.trans.forward.z * bulletSpeed) );
     }
 }
