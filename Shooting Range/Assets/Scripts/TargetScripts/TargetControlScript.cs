@@ -9,7 +9,6 @@ public class TargetControlScript : MonoBehaviour
     private Vector3 initPos;
     private int nofTarget=18;
     private float targetMargin = 10f;
-    private int line=1;
     
 
     //10m=0.7143

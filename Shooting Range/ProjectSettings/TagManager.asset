@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - bullet
+  - sniper rifle
+  - hand gun
   layers:
   - Default
   - TransparentFX

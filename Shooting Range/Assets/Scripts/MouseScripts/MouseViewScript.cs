@@ -4,24 +4,28 @@ using UnityEngine;
 
 public class MouseViewScript : MonoBehaviour
 {
-    private float sensi = 1.5f;
+    private float difSensi = 1.5f;
+    private float difFOV = 60f;
     private Transform trans;
     private Transform bodyTrans;
     private Transform headTrans;
+    private Camera cam;
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
         trans = gameObject.transform;
-        headTrans = trans.parent;
+        headTrans = GameObject.Find("Head").transform;
         bodyTrans = GameObject.Find("Body").transform;
+        cam = headTrans.Find("Camera").GetComponent<Camera>();
         //gunTrans = trans.Find("Gun").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
+        float sensi = (difSensi / difFOV) * cam.fieldOfView;
         float mouseX = (float)Input.GetAxis("Mouse X");
         float mouseY = (float)Input.GetAxis("Mouse Y");
 

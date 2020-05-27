@@ -306,7 +306,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0d6e6b514dab73145be67dc94d536494, type: 2}
+  - {fileID: 2100000, guid: 8da88b637a323fe468ca1bdca77b3d94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 8790561568984058404}
   m_Layer: 0
   m_Name: HandGun
-  m_TagString: Untagged
+  m_TagString: hand gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -506,7 +506,7 @@ Transform:
   m_GameObject: {fileID: 6736075496615766357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2000092, y: 0.1991351, z: 0.1992536}
   m_Children:
   - {fileID: 1725140572532903204}
   - {fileID: 1414256106106210428}
@@ -529,6 +529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6570326949218747128, guid: 6e30658011db75d41a77abb97c6ca908,
     type: 3}
+  kick: -0.5
 --- !u!1 &7034707828020863644
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +587,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0d6e6b514dab73145be67dc94d536494, type: 2}
+  - {fileID: 2100000, guid: 8da88b637a323fe468ca1bdca77b3d94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -665,7 +666,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0d6e6b514dab73145be67dc94d536494, type: 2}
+  - {fileID: 2100000, guid: 8da88b637a323fe468ca1bdca77b3d94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -742,7 +743,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0d6e6b514dab73145be67dc94d536494, type: 2}
+  - {fileID: 2100000, guid: 8da88b637a323fe468ca1bdca77b3d94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
